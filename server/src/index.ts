@@ -35,9 +35,9 @@ app.use("/projects",projectRoutes)
 app.use("/search",searchRoutes)
 app.use("/tasks",taskRoutes)
 
-const port = process.env.PORT;
+const port = Number(process.env.PORT) || 3000;
 try {
-  app.listen(3001, () => {
+  app.listen(port,"0.0.0.0", () => {
     console.log('Server running on port 3001');
   });
   
