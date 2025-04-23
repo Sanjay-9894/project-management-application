@@ -22,14 +22,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-console.log('🛠  DATABASE_URL:', process.env.DATABASE_URL);  
+
 import { PrismaClient } from '@prisma/client';  // ② now import Prisma
 const prisma = new PrismaClient();              // ③ instantiate
 
 // routes
-app.get("/", (req,res) =>{
-    res.send("This is home route")
-})
+app.get('/', (req, res) => {
+  res.send('Backend is live');
+});
 
 app.use("/projects",projectRoutes)
 app.use("/search",searchRoutes)
@@ -38,7 +38,7 @@ app.use("/tasks",taskRoutes)
 const port = Number(process.env.PORT) || 3000;
 try {
   app.listen(port,"0.0.0.0", () => {
-    console.log('Server running on port 3001');
+    console.log(`Server running on port ${port}` );
   });
   
   } catch (err) {

@@ -2,7 +2,7 @@ import { Request,Response } from "express";
 import { PrismaClient } from "@prisma/client";
 
 
-console.log('🛠  [projectController] DATABASE_URL:', process.env.DATABASE_URL);
+
 const prisma = new PrismaClient();
 
 export const getProjects = async (
@@ -26,7 +26,8 @@ export const getProjects = async (
 
 export const createProject = async (req: Request, res: Response) => {
     try {
-      const { name, description, startDate, endDate } = req.body;
+      const { name, description, startDate,endDate } = req.body;
+      console.log("Received data:", req.body); // Add this for debug
       
     // Just to be safe: delete 'id' if it somehow came in
     if ("id" in req.body) delete req.body.id;

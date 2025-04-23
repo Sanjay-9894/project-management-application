@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" :"rimraf dist && npx tsc",
-    "start" : "npm run build && node dist/index.js",
-    "dev" : "npm run build && concurrently \"npx tsc -w\" \"nodemon --exec ts-node src/index.ts\"",
+    "build": "rimraf dist && npx tsc",
+    "start": "npm run build && node dist/index.js",
+    "dev": "npm run build && concurrently \"npx tsc -w\" \"nodemon --exec ts-node src/index.ts\"",
     "seed": "ts-node prisma/seed.ts"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
+    "@types/lodash": "^4.17.16",
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.14.1",
     "concurrently": "^9.1.2",
@@ -32,7 +33,9 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
+    "lodash": "^4.17.21",
     "morgan": "^1.10.0",
-    "prisma": "^6.6.0"
+    "prisma": "^6.6.0",
+    "uuid": "^11.1.0"
   }
 }
