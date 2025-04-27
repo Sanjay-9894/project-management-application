@@ -1,5 +1,4 @@
 'use client'
-import Image from "next/image";
 import { useState,use } from "react";
 import ProjectHeader from "./projects/ProjectHeader";
 import BoardView from "./projects/BoardView";
